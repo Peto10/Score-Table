@@ -1,4 +1,12 @@
 .DS_Store
-
-# Local data / SQLite
 data/*
+.gopath
+.gomodcache
+data
+.git
+.cursor
+**/*.db
+/bin/
+/build/
+/*.exe
+/*.out
