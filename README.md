@@ -2,7 +2,7 @@
 
 Two-window app to run on localhost:
 - **Display (public scoreboard)**: `/display_score`
-- **Control panel (admin)**: `/control_panel/`
+- **Control panel (admin)**: `/control_panel`
 
 ## Quick start (Docker)
 
