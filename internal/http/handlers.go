@@ -205,6 +205,9 @@ func (h *Handlers) ActiveMatch(w http.ResponseWriter, r *http.Request) {
 		"Score2":  t2Score,
 		"Goals":   goalsForView,
 		"Started": m.StartedAt.UTC().Format("2006-01-02 15:04:05"),
+		"Display": map[string]any{
+			"Swapped": m.DisplaySwap,
+		},
 		"Timer": map[string]any{
 			"Supported":   m.Timer.DefaultMs > 0,
 			"Show":        timerSnap.Show,
@@ -218,6 +221,12 @@ func (h *Handlers) ActiveMatch(w http.ResponseWriter, r *http.Request) {
 			"Sec":         (timerSnap.RemainingMs / 1000) % 60,
 		},
 	})
+}
+
+func (h *Handlers) SwapDisplaySides(w http.ResponseWriter, r *http.Request) {
+	_ = h.active.ToggleDisplaySwap()
+	h.broadcastSnapshot()
+	http.Redirect(w, r, "/control_panel/active_match", http.StatusSeeOther)
 }
 
 func (h *Handlers) TimerToggle(w http.ResponseWriter, r *http.Request) {
@@ -628,12 +637,21 @@ func buildSnapshot(m *match.ActiveMatch) snapshot {
 			}
 		}
 	}
+	t1Name := m.Team1.TeamName
+	t2Name := m.Team2.TeamName
+	t1Score := s1
+	t2Score := s2
+	if m.DisplaySwap {
+		t1Name, t2Name = t2Name, t1Name
+		t1Score, t2Score = t2Score, t1Score
+	}
+
 	return snapshot{
 		Active:           true,
-		Team1Name:        m.Team1.TeamName,
-		Team2Name:        m.Team2.TeamName,
-		Team1Score:       s1,
-		Team2Score:       s2,
+		Team1Name:        t1Name,
+		Team2Name:        t2Name,
+		Team1Score:       t1Score,
+		Team2Score:       t2Score,
 		ShowTimer:        m.Timer.Show && m.Timer.DefaultMs > 0,
 		TimerRunning:     m.Timer.Show && m.Timer.Running,
 		TimerRemainingMs: rem,

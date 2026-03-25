@@ -87,6 +87,7 @@ func main() {
 		r.Post("/active_match/timer/reset", h.TimerReset)
 		r.Post("/active_match/timer/set", h.TimerSet)
 		r.Post("/active_match/timer/visibility", h.TimerVisibility)
+		r.Post("/active_match/display/swap_sides", h.SwapDisplaySides)
 		r.Post("/active_match/save", h.SaveMatch)
 		r.Post("/active_match/discard", h.DiscardMatch)
 		r.Post("/active_match/discard_beacon", h.DiscardMatchBeacon)

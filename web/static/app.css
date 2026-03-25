@@ -267,6 +267,19 @@ code{
   gap:14px;
   align-items:center;
 }
+.scoreInlineMid{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+.btnMini{
+  padding: 8px 10px;
+  font-size: .85rem;
+  border-radius: 14px;
+  line-height: 1;
+}
 .scoreInlineTeam{
   font-weight:900;
   font-size:clamp(.95rem, 1.1vw + .8rem, 1.35rem);
