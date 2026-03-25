@@ -10,7 +10,7 @@ Two-window app to run on localhost:
 docker compose up --build
 ```
 
-If `8080` is busy:
+If `8080` is busy, try different port:
 
 ```bash
 HOST_PORT=8090 docker compose up --build
@@ -22,17 +22,21 @@ Open:
 
 Data persists in `./data/app.db` (SQLite).
 
-## Teams & timer settings (no config files)
+## Quick test data add
 
-This app does not use a YAML config file.
-
-- **Teams**: add/edit/delete in `http://localhost:8080/control_panel/teams`
-- **Timer defaults**: set in `http://localhost:8080/control_panel/settings`
-
-Both are stored in SQLite (`./data/app.db`) so they persist across restarts.
+Warning: this will erase your in-app data (teams, players, score, timer settings ...)
+```bash
+# BE CAREFUL WITH rm -rf
+# Your working dir has to be the root dir of this project
+rm -rf data && cp -r template_data data
+```
 
 
 ## Functionality
+
+- **Teams**: add/edit/delete in `http://localhost:8080/control_panel/teams`
+- **Timer defaults**: set in `http://localhost:8080/control_panel/settings`
+Both are stored in SQLite database.
 
 - **Live scoreboard**: `/display_score` updates automatically (no refresh).
 - **Start match**: pick two teams and start from `/control_panel`.
