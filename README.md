@@ -24,7 +24,13 @@ Data persists in `./data/app.db` (SQLite).
 
 ## Config (`config/teams.yaml`)
 
-Teams/players and timer defaults live in `config/teams.yaml`.
+Teams/players and timer defaults live in `config/teams.yaml` (ignored by git).
+
+First time setup:
+
+```bash
+cp config/teams.example.yaml config/teams.yaml
+```
 
 ```yaml
 timer:

@@ -1,0 +1,22 @@
+timer:
+  default_minutes: 5
+  default_seconds: 0
+  show_by_default: true
+
+teams:
+  - id: team_red
+    name: "Red Rockets"
+    players:
+      - id: red_alex
+        name: "Alex"
+      - id: red_ben
+        name: "Ben"
+
+  - id: team_blue
+    name: "Blue Blizzard"
+    players:
+      - id: blue_carl
+        name: "Carl"
+      - id: blue_dana
+        name: "Dana"
+
