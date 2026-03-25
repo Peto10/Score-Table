@@ -156,6 +156,7 @@ code{
   color: rgba(167,176,195,.85);
 }
 .actions{display:flex; justify-content:flex-end}
+.timerSetSettings .actions{justify-content:flex-start}
 
 .panelFooter{padding:6px 2px}
 

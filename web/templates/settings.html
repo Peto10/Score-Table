@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Settings</title>
-    <link rel="stylesheet" href="/static/app.css?v=30" />
+    <link rel="stylesheet" href="/static/app.css?v=31" />
   </head>
   <body class="panelBody">
     <main class="panelWrap">
@@ -24,7 +24,7 @@
       {{end}}
 
       <section class="card">
-        <form class="timerSet" method="post" action="/control_panel/settings">
+        <form class="timerSet timerSetSettings" method="post" action="/control_panel/settings">
           <label class="field">
             <span class="labelText">Default minutes</span>
             <input class="textInput" name="default_minutes" type="number" inputmode="numeric" min="0" max="9999" step="1" value="{{index .Timer "DefaultMinutes"}}" />
