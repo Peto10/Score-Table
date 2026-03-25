@@ -7,13 +7,13 @@ Two-window app to run on localhost:
 ## Quick start (Docker)
 
 ```bash
-docker compose up -d --build
+docker compose up --build
 ```
 
 If `8080` is busy:
 
 ```bash
-HOST_PORT=8090 docker compose up -d --build
+HOST_PORT=8090 docker compose up --build
 ```
 
 Open:
