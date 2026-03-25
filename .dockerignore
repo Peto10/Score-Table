@@ -4,4 +4,7 @@ data
 .git
 .cursor
 **/*.db
-
+/bin/
+/build/
+/*.exe
+/*.out
