@@ -24,10 +24,10 @@ Data persists in `./data/app.db` (SQLite).
 
 ## Quick test data add
 
-Warning: this will erase your in-app data (teams, players, score, timer settings ...)
+Warning: this will erase your in-app data (teams, players, scores, timer settings...).
 ```bash
 # BE CAREFUL WITH rm -rf
-# Your working dir has to be the root dir of this project
+# Your working directory must be the root directory of this project
 rm -rf data && cp -r template_data data
 ```
 
