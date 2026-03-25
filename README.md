@@ -20,11 +20,11 @@ Open:
 - `http://localhost:8080/display_score` (or `http://localhost:8090/display_score`)
 - `http://localhost:8080/control_panel` (or `http://localhost:8090/control_panel`)
 
-Data persists in `./data/app.db` (SQLite).
+Data about teams, score, players, timer defaults etc. persists in `./data/app.db` (SQLite).
 
 ## Quick test data add
 
-Warning: this will erase your in-app data (teams, players, scores, timer settings...).
+Warning: this will erase your in-app data (teams, players, scores, timer defaults...).
 ```bash
 # BE CAREFUL WITH rm -rf
 # Your working directory must be the root directory of this project
@@ -36,8 +36,6 @@ rm -rf data && cp -r template_data data
 
 - **Teams**: add/edit/delete in `http://localhost:8080/control_panel/teams`
 - **Timer defaults**: set in `http://localhost:8080/control_panel/settings`
-Both are stored in SQLite database.
-
 - **Live scoreboard**: `/display_score` updates automatically (no refresh).
 - **Start match**: pick two teams and start from `/control_panel`.
 - **Add/remove goals**: `+` / `-` per player in active match.
