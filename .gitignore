@@ -1,8 +1,4 @@
 .DS_Store
 
 # Local data / SQLite
-data/
-*.db
-*.db-wal
-*.db-shm
-
+data/*
