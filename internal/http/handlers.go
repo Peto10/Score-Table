@@ -14,10 +14,10 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	"floorball-score-table/internal/config"
-	"floorball-score-table/internal/db"
-	"floorball-score-table/internal/match"
-	"floorball-score-table/internal/views"
+	"score-table/internal/config"
+	"score-table/internal/db"
+	"score-table/internal/match"
+	"score-table/internal/views"
 )
 
 type HandlersDeps struct {

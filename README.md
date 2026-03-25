@@ -1,4 +1,4 @@
-# Floorball score table
+# Score table
 
 Two-window app to run on localhost:
 - **Display (public scoreboard)**: `/display_score`

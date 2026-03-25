@@ -1,4 +1,4 @@
-module floorball-score-table
+module score-table
 
 go 1.23.0
 

@@ -14,11 +14,11 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 
-	"floorball-score-table/internal/config"
-	"floorball-score-table/internal/db"
-	apphttp "floorball-score-table/internal/http"
-	"floorball-score-table/internal/match"
-	"floorball-score-table/internal/views"
+	"score-table/internal/config"
+	"score-table/internal/db"
+	apphttp "score-table/internal/http"
+	"score-table/internal/match"
+	"score-table/internal/views"
 )
 
 func main() {
