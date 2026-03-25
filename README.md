@@ -18,7 +18,7 @@ HOST_PORT=8090 docker compose up -d --build
 
 Open:
 - `http://localhost:8080/display_score` (or `http://localhost:8090/display_score`)
-- `http://localhost:8080/control_panel/` (or `http://localhost:8090/control_panel/`)
+- `http://localhost:8080/control_panel` (or `http://localhost:8090/control_panel`)
 
 Data persists in `./data/app.db` (SQLite).
 
@@ -52,7 +52,7 @@ teams:
 ## Functionality
 
 - **Live scoreboard**: `/display_score` updates automatically (no refresh).
-- **Start match**: pick two teams and start from `/control_panel/`.
+- **Start match**: pick two teams and start from `/control_panel`.
 - **Add/remove goals**: `+` / `-` per player in active match.
 - **Store matches**: writes match + goal rows into SQLite.
 - **Timer**: start/pause, reset, set minutes/seconds, show/hide.
