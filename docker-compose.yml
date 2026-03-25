@@ -7,14 +7,7 @@ services:
     environment:
       ADDR: ":8080"
       DB_PATH: "/data/app.db"
-      CONFIG_PATH: "/config/teams.yaml"
     volumes:
       - ./data:/data
-      - type: bind
-        source: ./config/teams.yaml
-        target: /config/teams.yaml
-        read_only: true
-        bind:
-          create_host_path: false
     restart: unless-stopped
 

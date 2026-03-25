@@ -6,6 +6,3 @@ data/
 *.db-wal
 *.db-shm
 
-# Local config (commit an example instead)
-config/teams.yaml
-

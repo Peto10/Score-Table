@@ -14,7 +14,6 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 
-	"score-table/internal/config"
 	"score-table/internal/db"
 	apphttp "score-table/internal/http"
 	"score-table/internal/match"
@@ -23,16 +22,10 @@ import (
 
 func main() {
 	var (
-		addr       = flag.String("addr", envOr("ADDR", ":8080"), "listen address")
-		configPath = flag.String("config", envOr("CONFIG_PATH", "/config/teams.yaml"), "teams config path (yaml)")
-		dbPath     = flag.String("db", envOr("DB_PATH", "/data/app.db"), "sqlite db path")
+		addr   = flag.String("addr", envOr("ADDR", ":8080"), "listen address")
+		dbPath = flag.String("db", envOr("DB_PATH", "/data/app.db"), "sqlite db path")
 	)
 	flag.Parse()
-
-	cfg, err := config.Load(*configPath)
-	if err != nil {
-		log.Fatalf("load config: %v", err)
-	}
 
 	sqlDB, err := db.OpenAndInit(*dbPath)
 	if err != nil {
@@ -50,7 +43,6 @@ func main() {
 	hub := apphttp.NewScoreHub()
 
 	h := apphttp.NewHandlers(apphttp.HandlersDeps{
-		Config:   cfg,
 		DB:       sqlDB,
 		Renderer: renderer,
 		Active:   active,
@@ -77,7 +69,15 @@ func main() {
 
 	r.Route("/control_panel", func(r chi.Router) {
 		r.Get("/", h.ControlPanel)
+
+		r.Get("/settings", h.Settings)
+		r.Post("/settings", h.UpdateSettings)
+
 		r.Get("/teams", h.TeamsOverview)
+		r.Post("/teams/create", h.CreateTeam)
+		r.Post("/teams/{teamID}/update", h.UpdateTeam)
+		r.Post("/teams/{teamID}/delete", h.DeleteTeam)
+
 		r.Post("/start_match", h.StartMatch)
 
 		r.Get("/active_match", h.ActiveMatch)

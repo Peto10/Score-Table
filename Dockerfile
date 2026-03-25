@@ -21,7 +21,6 @@ USER 10001
 
 ENV ADDR=":8080"
 ENV DB_PATH="/data/app.db"
-ENV CONFIG_PATH="/config/teams.yaml"
 
 EXPOSE 8080
 

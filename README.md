@@ -22,31 +22,14 @@ Open:
 
 Data persists in `./data/app.db` (SQLite).
 
-## Config (`config/teams.yaml`)
+## Teams & timer settings (no config files)
 
-Teams/players and timer defaults live in `config/teams.yaml` (ignored by git).
+This app does not use a YAML config file.
 
-First time setup:
+- **Teams**: add/edit/delete in `http://localhost:8080/control_panel/teams`
+- **Timer defaults**: set in `http://localhost:8080/control_panel/settings`
 
-```bash
-cp config/teams.example.yaml config/teams.yaml
-```
-
-```yaml
-timer:
-  default_minutes: 15
-  default_seconds: 0
-  show_by_default: true
-
-teams:
-  - id: team_red
-    name: "Red Rockets"
-    players:
-      - id: red_alex
-        name: "Alex"
-      - id: red_ben
-        name: "Ben"
-```
+Both are stored in SQLite (`./data/app.db`) so they persist across restarts.
 
 
 ## Functionality
