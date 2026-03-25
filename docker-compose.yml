@@ -10,6 +10,11 @@ services:
       CONFIG_PATH: "/config/teams.yaml"
     volumes:
       - ./data:/data
-      - ./config/teams.yaml:/config/teams.yaml:ro
+      - type: bind
+        source: ./config/teams.yaml
+        target: /config/teams.yaml
+        read_only: true
+        bind:
+          create_host_path: false
     restart: unless-stopped
 
