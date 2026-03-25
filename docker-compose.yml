@@ -1,5 +1,6 @@
 services:
   floorball-score-table:
+    image: floorball-score-table:0.1.0
     build: .
     ports:
       - "${HOST_PORT:-8080}:8080"
