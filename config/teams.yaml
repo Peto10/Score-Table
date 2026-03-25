@@ -1,7 +1,7 @@
 timer:
-  default_minutes: 0
-  default_seconds: 5
-  show_by_default: false
+  default_minutes: 5
+  default_seconds: 0
+  show_by_default: true
 
 teams:
   - id: team_red
