@@ -7,14 +7,15 @@ Two-window app to run on localhost:
 ## Quick start (Docker)
 
 ```bash
+git clone git@github.com:Peto10/Score-Table.git
+cd Score-Table
+```
+
+```bash
 docker compose up --build
 ```
 
-If `8080` is busy, try different port:
-
-```bash
-HOST_PORT=8090 docker compose up --build
-```
+If `8080` is busy, try different port (eg. `HOST_PORT=8090 docker compose up --build`)
 
 Open:
 - `http://localhost:8080/display_score` (or `http://localhost:8090/display_score`)
