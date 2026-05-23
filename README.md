@@ -4,6 +4,9 @@ Two-window app to run on localhost:
 - **Display (public scoreboard)**: `/display_score`
 - **Control panel (admin)**: `/control_panel`
 
+## Demo video
+https://github.com/user-attachments/assets/74c383bc-db6b-47b5-9587-179eeb57f159
+
 ## Quick start (Docker)
 
 ```bash
@@ -32,7 +35,6 @@ Warning: this will erase your in-app data (teams, players, scores, timer default
 rm -rf data && cp -r template_data data
 ```
 
-
 ## Functionality
 
 - **Teams**: add/edit/delete in `http://localhost:8080/control_panel/teams`
@@ -47,3 +49,4 @@ rm -rf data && cp -r template_data data
 - **Edit match**: open a saved match and adjust goals.
 - **Player stats matrix**: player goals per opponent team + TOTAL.
 
+**Note**: this project is half-vibed, so please don’t judge the code.
